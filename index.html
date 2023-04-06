@@ -24,34 +24,52 @@
 </head>
 
 <body>
-
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
-
-  000
-
-  Cardholder Name
-  e.g. Jane Appleseed
-
-  Card Number
-  e.g. 1234 5678 9123 0000
-
-  Exp. Date (MM/YY)
-  MM
-  YY
-
-  CVC
-  e.g. 123
-
-  Confirm
-
-  <!-- Completed state start -->
-
-  Thank you!
-  We've added your card details
-  Continue
-
+  <main>
+    <!--Card display. Numbers and text change-->
+    <section>
+      <div id="showNum">
+        0000 0000 0000 0000
+      </div>
+      <div id="showName">Full Name</div>
+      <div><span id="showExpDateM">00</span>/<span id="showExpDateY">00</span></div>
+      <div id="showCvc">
+        000
+      </div>
+    </section>
+    <section>
+      <!--
+          2) link button 
+          3) make number text box number only and specific character limit 
+          4) make text of MM&YY small-->
+      <form class="card-form" action="" method="get">
+        <div>
+          <label for="name">Cardholder Name</label>
+          <input id="cardName" type="text" name="name" placeholder="Full name">
+        </div>
+        <div>
+          <label for="number">Card Number</label>
+          <input id="cardNum" type="text" name="number" placeholder="1234 5678 9123 0000">
+        </div>
+        <div>
+          <label for="expDate">Exp. Date (MM/YY)</label>
+          <input id="expDateM" name="expDate" type="text" placeholder="MM">
+          <input id="expDateY" name="expDate" type="text" placeholder="YY">
+          <label for="cvc">CVC</label>
+          <input id="cvc" name="cvc" type="text">
+        </div>
+        <div>
+          <input id="submit" type="submit" value="Confirm">
+        </div>
+      </form>
+    </section>
+    <!-- Completed state start
+    Hide below -->
+    <div>
+      Thank you!
+      We've added your card details
+      Continue
+    </div>
+  </main>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
