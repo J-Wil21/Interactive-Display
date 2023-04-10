@@ -16,6 +16,8 @@
     .attribution {
       font-size: 11px;
       text-align: center;
+      position: absolute;
+      top: 0;
     }
 
     .attribution a {
@@ -25,20 +27,25 @@
 </head>
 
 <body>
-  <section class="background"></section>
+  <section>
+
+  </section>
+  <img class="background" src="images/bg-main-desktop.png" alt="linear gradient background" srcset="">
   <main>
     <!--Card display. Numbers and text change-->
-    <section>
+    <section class="cardFB">
+      <img class="cardF" src="images/bg-card-front.png" alt="front image of credit card with details">
       <div id="showNum">
         0000 0000 0000 0000
       </div>
       <div id="showName">Full Name</div>
-      <div><span id="showExpDateM">00</span>/<span id="showExpDateY">00</span></div>
+      <div class="showExpDateMY"><span id="showExpDateM">00</span>/<span id="showExpDateY">00</span></div>
+      <img src="images/bg-card-back.png" alt=" back image of credit card with details">
       <div id="showCvc">
         000
       </div>
     </section>
-    <section>
+    <section class="formInfo">
       <!---->
       <form class="card-form" action="" method="get">
         <div>
