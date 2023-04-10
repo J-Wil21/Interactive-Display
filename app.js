@@ -35,7 +35,6 @@ closeBtn.addEventListener('click', () => {
     }
 })
 
-
 cardName.addEventListener('input', () => {
     if (cardName.value === "") {
         showName.innerText = "Full name";
