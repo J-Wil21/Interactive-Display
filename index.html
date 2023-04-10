@@ -48,32 +48,43 @@
         </div>
         <div>
           <label for="number">Card Number</label>
-          <input id="cardNum" type="text" name="number" placeholder="1234 5678 9123 0000">
+          <input id="cardNum" type="number" name="number" placeholder="1234 5678 9123 0000">
         </div>
         <div>
           <label for="expDate">Exp. Date (MM/YY)</label>
-          <input id="expDateM" name="expDate" type="text" placeholder="MM">
-          <input id="expDateY" name="expDate" type="text" placeholder="YY">
+          <input id="expDateM" name="expDate" type="number" placeholder="MM">
+          <input id="expDateY" name="expDate" type="number" placeholder="YY">
           <label for="cvc">CVC</label>
-          <input id="cvc" name="cvc" type="text">
+          <input id="cvc" name="cvc" type="number" min="1" max="3">
         </div>
         <div>
-          <input id="submit" type="submit" value="Confirm">
+          <!-- <input  type="submit" value="Confirm"> -->
+          <button type="button" id="btn">Submit</button>
         </div>
       </form>
     </section>
     <!-- Completed state start
     Hide below -->
-    <div>
-      Thank you!
-      We've added your card details
-      Continue
+    <div class="hide" id="box">
+
+      <a class="close-btn" href="#">
+        <ion-icon class="x-btn" name="close-outline"></ion-icon>
+      </a>
+      <div class="thanks">
+        Thank you!
+        We've added your card details<br>
+        <a href="#"> Continue</a>
+      </div>
     </div>
   </main>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
   </div>
+  <!--Icon-->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <!--Link to JS file-->
   <script src="app.js"></script>
 </body>
 
