@@ -17,14 +17,26 @@ const btn = document.querySelector('#btn')
 const message = document.querySelector('.hide');
 const box = document.getElementById('box')
 const closeBtn = document.querySelector('.close-btn')
+let clicked = false;
 
 
 btn.addEventListener('click', () => {
-    if (message.style.display === 'none') {
-        message.style.display = 'block'
+
+    cardName.value = '';
+    cardNum.value = '';
+    expDateM.value = '';
+    expDateY.value = '';
+    cvc.value = '';
+
+    if (cvc.value === '') {
+        message.style.display = 'block';
     } else {
-        message.style.display = 'none'
-    }
+        message.style.display = 'none';
+    };
+
+
+
+
 })
 
 closeBtn.addEventListener('click', () => {
@@ -41,6 +53,8 @@ cardName.addEventListener('input', () => {
     } else {
         showName.innerHTML = cardName.value;
     }
+
+
 });
 
 cardNum.addEventListener('input', () => {
@@ -75,3 +89,10 @@ cvc.addEventListener('input', () => {
     }
 });
 
+// function to how many digit are allow.
+
+function checker(id) {
+    if (id.value.length > id.maxLength) {
+        id.value = id.value.slice(0, id.maxLength);
+    }
+}
