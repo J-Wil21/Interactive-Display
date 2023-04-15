@@ -9,6 +9,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="reset.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Interactive card details form</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -34,37 +37,40 @@
   <main>
     <!--Card display. Numbers and text change-->
     <section class="cardFB">
-      <img class="cardF" src="images/bg-card-front.png" alt="front image of credit card with details">
-      <div id="showNum">
-        0000 0000 0000 0000
-      </div>
-      <div id="showName">Full Name</div>
-      <div class="showExpDateMY"><span id="showExpDateM">00</span>/<span id="showExpDateY">00</span></div>
-      <img src="images/bg-card-back.png" alt=" back image of credit card with details">
-      <div id="showCvc">
-        000
-      </div>
+      <section class="cardF">
+        <img class="logo" src="images/card-logo.svg" alt="circle logo">
+        <div id="showNum">
+          0000 0000 0000 0000
+        </div>
+        <div class="nameDate">
+          <div id="showName">Full Name</div>
+          <div class="showExpDateMY"><span id="showExpDateM">00</span>/<span id="showExpDateY">00</span></div>
+        </div>
+      </section>
+      <section class="cardB">
+        <div id="showCvc">000</div>
+      </section>
     </section>
     <section class="formInfo">
       <!---->
       <form class="card-form" action="" method="get">
         <div>
-          <label for="name">Cardholder Name</label>
+          <label id="text" for="name">Cardholder Name</label>
           <input id="cardName" type="text" name="name" placeholder="Full name" maxlength="25" pattern="[A-Za-z ]+"
             required>
         </div>
         <div>
-          <label for="number">Card Number</label>
+          <label id="text" for="number">Card Number</label>
           <input id="cardNum" type="number" name="number" placeholder="1234 5678 9123 0000" max="16" maxlength="16"
             oninput="checker(cardNum)" required>
         </div>
         <div>
-          <label for="expDate">Exp. Date (MM/YY)</label>
+          <label id="text" for="expDate">Exp. Date (MM/YY)</label>
           <input id="expDateM" name="expDate" type="number" placeholder="MM" min="0" max="2" minlength="2" maxlength="2"
             oninput="checker(expDateM)" required>
           <input id="expDateY" name="expDate" type="number" placeholder="YY" min="0" max="2" maxlength="2"
             oninput="checker(expDateY)" required>
-          <label for="cvc">CVC</label>
+          <label id="text" for="cvc">CVC</label>
           <input id="cvc" name="cvc" type="number" oninput="checker(cvc)" min="0" max="3" maxlength="3" required>
         </div>
         <div>
