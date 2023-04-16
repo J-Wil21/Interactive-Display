@@ -64,19 +64,26 @@
           <input id="cardNum" type="number" name="number" placeholder="1234 5678 9123 0000" max="16" maxlength="16"
             oninput="checker(cardNum)" required>
         </div>
-        <div>
-          <label id="text" for="expDate">Exp. Date (MM/YY)</label>
-          <input id="expDateM" name="expDate" type="number" placeholder="MM" min="0" max="2" minlength="2" maxlength="2"
-            oninput="checker(expDateM)" required>
-          <input id="expDateY" name="expDate" type="number" placeholder="YY" min="0" max="2" maxlength="2"
-            oninput="checker(expDateY)" required>
-          <label id="text" for="cvc">CVC</label>
-          <input id="cvc" name="cvc" type="number" oninput="checker(cvc)" min="0" max="3" maxlength="3" required>
+        <div class="flex-date-cvc">
+          <div>
+            <label id="text" for="expDate">Exp. Date (MM/YY)</label>
+            <div class="flex-input">
+              <input id="expDateM" name="expDate" type="number" placeholder="MM" min="0" max="2" minlength="2"
+                maxlength="2" oninput="checker(expDateM)" required>
+              <input id="expDateY" name="expDate" type="number" placeholder="YY" min="0" max="2" maxlength="2"
+                oninput="checker(expDateY)" required>
+            </div>
+          </div>
+          <div>
+            <label id="text" for="cvc">CVC</label>
+            <input id="cvc" name="cvc" type="number" placeholder="000" oninput="checker(cvc)" min="0" max="3"
+              maxlength="3" required>
+          </div>
         </div>
         <div>
           <!-- <input  type="submit" value="Confirm"> -->
 
-          <button type="button" id="btn">Submit</button>
+          <button type="button" id="btn">Confirm</button>
 
         </div>
       </form>
