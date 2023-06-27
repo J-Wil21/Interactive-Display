@@ -22,30 +22,71 @@ let clicked = false;
 
 btn.addEventListener('click', () => {
 
+    checkInput(cardName.value, cardNum.value);
+    //checkNum16(cardNum.value);
+    //checkNum3(cvc.value);
+    // checkNum2(expDateM.value);
+    // checkNum2(expDateY.value);
+    
+
+
     cardName.value = '';
     cardNum.value = '';
     expDateM.value = '';
     expDateY.value = '';
     cvc.value = '';
+});
 
-    if (cvc.value === '') {
-        message.style.display = 'block';
+//function to check if text is in input box
+function checkInput(text , value) {
+    let num16 = /^\d{16}$/; 
+    if (cardName.value.trim(text) === '' && !num16.test(value)) {
+        //apply css to make textbox red
+        cardName.classList.add('red');
+        cardNum.classList.add('red');
     } else {
-        message.style.display = 'none';
+        message.style.display = 'block';
+        cardName.classList.remove('red')
     };
+}
 
+// function to check if numbers is in the input box
+function checkNum16(value) {
+    let num16 = /^\d{16}$/;  // Matches exactly 16 digits
+    if (num16.test(value)) {
+        message.style.display = 'block';
+        cardNum.classList.remove('red')
+    } else {
+        
+    }
+};
+function checkNum3(value) {
+    let num3 = /^\d{3}$/;  // Matches exactly 3 digits
+    if (num3.test(value)) {
+        message.style.display = 'block';
+        cardName.classList.remove('red')
+    } else {
+        classList.add('red');
+    }
+};
+function checkNum2(value) {
+    let num2 = /^\d{2}$/;  // Matches exactly 3 digits
+    if (num2.test(value)) {
+        message.style.display = 'block';
+        cardName.classList.remove('red')
+    } else {
+        classList.add('red');
+    }
+};
 
-
-
-})
-
+//function to remove succesful message box
 closeBtn.addEventListener('click', () => {
     if (message.style.display === 'none') {
         message.style.display = 'block'
     } else {
         message.style.display = 'none'
     }
-})
+});
 
 cardName.addEventListener('input', () => {
     if (cardName.value === "") {

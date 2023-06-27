@@ -192,3 +192,7 @@ input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+/*redbox */
+.red {
+    border-color: hsl(0, 100%, 66%);
+}
