@@ -51,8 +51,14 @@
         <div id="showCvc">000</div>
       </section>
     </section>
+    <!--Form and thank message-->
     <section class="formInfo">
       <!---->
+      <div class="hide" id="thankYou">
+        <h2>Thank You</h2>
+        <p>We've added your card details</p>
+        <button id="reset">Continue</button>
+      </div>
       <form class="card-form" action="" method="get">
         <div>
           <label id="text" for="name">Cardholder Name</label>
@@ -90,13 +96,14 @@
     </section>
     <!-- Completed state start
     Hide below -->
+  
     <div class="hide" id="box">
       <a class="close-btn" href="#">
         <ion-icon class="x-btn" name="close-outline"></ion-icon>
       </a>
       <div class="thanks">
-        Thank you!
-        We've added your card details<br>
+        Incorrect Details<br>
+        Please fill in blanks<br>
         <a href="#"> Continue</a>
       </div>
 

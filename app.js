@@ -22,13 +22,7 @@ let clicked = false;
 
 btn.addEventListener('click', () => {
 
-    checkInput(cardName.value, cardNum.value);
-    //checkNum16(cardNum.value);
-    //checkNum3(cvc.value);
-    // checkNum2(expDateM.value);
-    // checkNum2(expDateY.value);
-    
-
+    checkInput(cardName.value, cardNum.value, cvc.value, expDateM.value, expDateY.value);
 
     cardName.value = '';
     cardNum.value = '';
@@ -36,48 +30,56 @@ btn.addEventListener('click', () => {
     expDateY.value = '';
     cvc.value = '';
 });
-
+ let num16 = /^\d{16}$/;
+    let num3 = /^\d{3}$/;
+    let num2 = /^\d{2}$/;
 //function to check if text is in input box
-function checkInput(text , value) {
-    let num16 = /^\d{16}$/; 
-    if (cardName.value.trim(text) === '' && !num16.test(value)) {
+function checkInput(cardName, value16, value3, dateY2, dateM2) {
+    
+    if (
+        cardName.trim().length === 0 ||
+        value16.length !== 16 ||
+        value3.length !== 3 ||
+        dateY2.length !== 2 ||
+        dateM2.length !== 2) {
         //apply css to make textbox red
-        cardName.classList.add('red');
-        cardNum.classList.add('red');
+        
+        redOn();
     } else {
-        message.style.display = 'block';
-        cardName.classList.remove('red')
+        hideForm();
+        redOff();
     };
 }
 
-// function to check if numbers is in the input box
-function checkNum16(value) {
-    let num16 = /^\d{16}$/;  // Matches exactly 16 digits
-    if (num16.test(value)) {
-        message.style.display = 'block';
-        cardNum.classList.remove('red')
-    } else {
-        
-    }
-};
-function checkNum3(value) {
-    let num3 = /^\d{3}$/;  // Matches exactly 3 digits
-    if (num3.test(value)) {
-        message.style.display = 'block';
-        cardName.classList.remove('red')
-    } else {
-        classList.add('red');
-    }
-};
-function checkNum2(value) {
-    let num2 = /^\d{2}$/;  // Matches exactly 3 digits
-    if (num2.test(value)) {
-        message.style.display = 'block';
-        cardName.classList.remove('red')
-    } else {
-        classList.add('red');
-    }
-};
+// function to hide form and button to reset
+function hideForm() {
+    document.querySelector('.card-form').style.display = 'none';
+    document.querySelector('#thankYou').style.display = 'block';
+}
+    //button
+document.querySelector('#reset').addEventListener('click', () => {
+    document.querySelector('.card-form').style.display = 'block';
+    document.querySelector('#thankYou').style.display = 'none';
+})
+
+//Function to turn boxes red (On & Off)
+
+function redOn() {
+    cardName.classList.add('red');
+        cardNum.classList.add('red');
+        cvc.classList.add('red');
+        expDateM.classList.add('red');
+        expDateY.classList.add('red');
+}
+
+function redOff() {
+        cardName.classList.remove('red');
+        cardName.classList.remove('red');
+        cardNum.classList.remove('red');
+        cvc.classList.remove('red');
+        expDateM.classList.remove('red');
+        expDateY.classList.remove('red');
+}
 
 //function to remove succesful message box
 closeBtn.addEventListener('click', () => {
@@ -130,7 +132,7 @@ cvc.addEventListener('input', () => {
     }
 });
 
-// function to how many digit are allow.
+// function to how many digit are allow. Used on HTML
 
 function checker(id) {
     if (id.value.length > id.maxLength) {
