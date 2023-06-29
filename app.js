@@ -17,25 +17,17 @@ const btn = document.querySelector('#btn')
 const message = document.querySelector('.hide');
 const box = document.getElementById('box')
 const closeBtn = document.querySelector('.close-btn')
-let clicked = false;
 
 
 btn.addEventListener('click', () => {
 
     checkInput(cardName.value, cardNum.value, cvc.value, expDateM.value, expDateY.value);
 
-    cardName.value = '';
-    cardNum.value = '';
-    expDateM.value = '';
-    expDateY.value = '';
-    cvc.value = '';
+    
 });
- let num16 = /^\d{16}$/;
-    let num3 = /^\d{3}$/;
-    let num2 = /^\d{2}$/;
+
 //function to check if text is in input box
 function checkInput(cardName, value16, value3, dateY2, dateM2) {
-    
     if (
         cardName.trim().length === 0 ||
         value16.length !== 16 ||
@@ -43,8 +35,8 @@ function checkInput(cardName, value16, value3, dateY2, dateM2) {
         dateY2.length !== 2 ||
         dateM2.length !== 2) {
         //apply css to make textbox red
-        
         redOn();
+        box.style.display = 'block'
     } else {
         hideForm();
         redOff();
@@ -60,12 +52,18 @@ function hideForm() {
 document.querySelector('#reset').addEventListener('click', () => {
     document.querySelector('.card-form').style.display = 'block';
     document.querySelector('#thankYou').style.display = 'none';
+    
+    cardName.value = '';
+    cardNum.value = '';
+    expDateM.value = '';
+    expDateY.value = '';
+    cvc.value = '';
 })
 
 //Function to turn boxes red (On & Off)
 
 function redOn() {
-    cardName.classList.add('red');
+        cardName.classList.add('red');
         cardNum.classList.add('red');
         cvc.classList.add('red');
         expDateM.classList.add('red');
@@ -81,15 +79,7 @@ function redOff() {
         expDateY.classList.remove('red');
 }
 
-//function to remove succesful message box
-closeBtn.addEventListener('click', () => {
-    if (message.style.display === 'none') {
-        message.style.display = 'block'
-    } else {
-        message.style.display = 'none'
-    }
-});
-
+//Functions for all input boxes.
 cardName.addEventListener('input', () => {
     if (cardName.value === "") {
         showName.innerText = "Full name";
@@ -104,7 +94,8 @@ cardNum.addEventListener('input', () => {
     if (cardNum.value === "") {
         showNum.innerText = "0000 0000 0000 0000";
     } else {
-        showNum.innerHTML = cardNum.value;
+        showNum.innerHTML = cardNum.value.replace(/(.{4})/g, '$1 ');
+        
     }
 });
 
@@ -129,6 +120,15 @@ cvc.addEventListener('input', () => {
         showCvc.innerText = "000";
     } else {
         showCvc.innerHTML = cvc.value;
+    }
+});
+
+//function to remove error message box
+closeBtn.addEventListener('click', () => {
+    if (box.style.display === 'none') {
+        box.style.display = 'block'
+    } else {
+        box.style.display = 'none'
     }
 });
 

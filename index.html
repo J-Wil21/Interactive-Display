@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- displays site properly based on user's device -->
-
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="reset.css">
@@ -12,23 +12,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Interactive card details form</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution {
-      font-size: 11px;
-      text-align: center;
-      position: absolute;
-      top: 0;
-    }
-
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
-  </style>
 </head>
+
 <body>
-  <img class="background" src="images/bg-main-desktop.png" alt="linear gradient background" srcset="">
+  <img class="background" src="images/bg-main-desktop.png" alt="linear gradient background">
   <main>
     <!--Card display. Numbers and text change-->
     <section class="cardFB">
@@ -46,13 +33,19 @@
         <div id="showCvc">000</div>
       </section>
     </section>
-    <!--Form and thank message-->
+    <!--Form and thank you message-->
     <section class="formInfo">
-      <!---->
       <div class="hide" id="thankYou">
-        <h2>Thank You</h2>
-        <p>We've added your card details</p>
-        <button id="reset">Continue</button>
+        <div class="thanksMesBox">
+          <div>
+            <img src="images/icon-complete.svg" alt="a circle with a tick.">
+          </div>
+          <div class="thankYouText">
+            <h2>Thank You</h2>
+            <p>We've added your card details</p>
+            <button id="reset">Continue</button>
+          </div>
+          </div>
       </div>
       <form class="card-form" action="" method="get">
         <div>
@@ -90,12 +83,11 @@
     Hide below -->
     <div class="hide" id="box">
       <a class="close-btn" href="#">
-        <ion-icon class="x-btn" name="close-outline"></ion-icon>
+        <ion-icon class="x-btn" name="close-outline" style=""></ion-icon>
       </a>
-      <div class="thanks">
+      <div class="incorrectMessage">
         Incorrect Details<br>
-        Please fill in blanks<br>
-        <a href="#"> Continue</a>
+        Please fill in blanks
       </div>
     </div>
   </main>
