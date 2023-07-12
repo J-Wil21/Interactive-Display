@@ -36,7 +36,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github Repo ](https://github.com/J-Wil21/Interactive-Display/tree/main)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [live site](j-wil21.github.io/Interactive-Display/)
 
 ## My process
 
